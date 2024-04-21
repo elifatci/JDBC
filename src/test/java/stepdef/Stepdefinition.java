@@ -3,6 +3,7 @@ package stepdef;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.sl.In;
 import manage.QueryManage;
 import org.junit.Assert;
 import utils.ConfigReader;
@@ -83,6 +84,20 @@ public class Stepdefinition {
         assertEquals(que1,nameList.get(0));
         assertEquals(que2,nameList.get(1));
 
+    }
+    @When("Query04 is prepared and executed")
+    public void query04_is_prepared_and_executed() throws SQLException {
+        query=queryManage.getQuery04();
+        resultSet=JDBCReusableMethods.getStatement().executeQuery(query);
+    }
+    @Then("The ResultSet04 results are processed {int}")
+    public void the_result_set04_results_are_processed(int que1) throws SQLException {
+        List<Integer> numberList=new ArrayList<>();
+        while (resultSet.next()){
+            int charge=resultSet.getInt("charge");
+            numberList.add(charge);
+        }
+        assertEquals((Integer)que1,numberList.get(0));
 
     }
 

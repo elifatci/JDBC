@@ -1,4 +1,4 @@
-Feature: US01 Select Query Execute
+Feature: US02 Select Query Execute
 
   Scenario:Verify the "remember_token" information of the data in the "admins" table in the database
 

@@ -1,4 +1,4 @@
-Feature: US02 Select Query Execute
+Feature: US03 Select Query Execute
 
   Scenario Outline: Verify the "name" information of the first 2 records in the "cron_schedules" table in the database
 
